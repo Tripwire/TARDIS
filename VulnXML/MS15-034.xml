@@ -1,0 +1,72 @@
+<stix:STIX_Package 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:stix="http://stix.mitre.org/stix-1" 
+	xmlns:stixCommon="http://stix.mitre.org/common-1" 
+	xmlns:indicator="http://stix.mitre.org/Indicator-2"
+	xmlns:cybox="http://cybox.mitre.org/cybox-2" 
+	xmlns:cyboxCommon="http://cybox.mitre.org/common-2" 
+	xmlns:et="http://stix.mitre.org/ExploitTarget-1" 
+	xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1" 
+	xmlns:HTTPSessionObj="http://cybox.mitre.org/objects#HTTPSessionObject-2" 
+	xmlns:WinEventLogObj="http://cybox.mitre.org/objects#WinEventLogObject-2" 
+	xmlns:NetworkConnectionObj="http://cybox.mitre.org/objects#NetworkConnectionObject-2" 
+	xmlns:heavd="http://www.tripwire.com/" 
+	xsi:schemaLocation="
+		http://stix.mitre.org/stix-1 
+		http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd 
+		http://stix.mitre.org/ExploitTarget-1 
+		http://stix.mitre.org/XMLSchema/exploit_target/1.1.1/exploit_target.xsd 
+		http://stix.mitre.org/default_vocabularies-1 
+		http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd 
+		http://cybox.mitre.org/cybox-2 
+		http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd"
+	id="heavd:STIXPackage-0196d980-60d9-4717-b7c5-bf7bc27a35d4" 
+	
+	version="1.1.1">
+	<stix:Exploit_Targets>
+		<stixCommon:Exploit_Target 
+			xsi:type="et:ExploitTargetType" 
+			id="heavd:et-48a276f7-a8d7-bba2-3575-e8a63fcd488" 
+			timestamp="2015-04-24T09:00:00.000000Z">
+			<et:Title>MS15-035 HTTP.sys Vulnerability</et:Title>
+			<et:Vulnerability>
+				<et:CVE_ID>CVE-2015-1635</et:CVE_ID>
+			</et:Vulnerability>
+		</stixCommon:Exploit_Target>
+	</stix:Exploit_Targets>
+	<stix:Indicators>
+		<stix:Indicator xsi:type="indicator:IndicatorType" timestamp="2015-04-24T09:00:00.000000Z" id="heavd:indicator-8d88dd33-1e16-4814-814e-662fb0ac842f">
+			<indicator:Title>MS15-035 Exploit Detection</indicator:Title>
+			<indicator:Description>Detect the attempted exploitation of MS15-035/CVE-2015-1635</indicator:Description>
+			<indicator:Observable>
+				<cybox:Observable_Composition operator="OR">
+					<cybox:Observable id="heavd:observable-b7013416-7e77-4078-a0bd-a33b49c7cb2f">
+						<cybox:Object>
+							<cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+								<NetworkConnectionObj:Layer7_Protocol datatype="string">HTTP</NetworkConnectionObj:Layer7_Protocol>
+								<NetworkConnectionObj:Layer7_Connections>
+									<NetworkConnectionObj:HTTP_Session>
+										<HTTPSessionObj:HTTP_Request_Response>
+											<HTTPSessionObj:HTTP_Server_Response>
+												<HTTPSessionObj:HTTP_Status_Line>
+													<HTTPSessionObj:Status_Code>416</HTTPSessionObj:Status_Code>
+												</HTTPSessionObj:HTTP_Status_Line>
+											</HTTPSessionObj:HTTP_Server_Response>
+										</HTTPSessionObj:HTTP_Request_Response>
+									</NetworkConnectionObj:HTTP_Session>
+								</NetworkConnectionObj:Layer7_Connections>
+							</cybox:Properties>
+						</cybox:Object>
+					</cybox:Observable>
+					<cybox:Observable id="heavd:observable-b7013416-7e77-4078-a0bd-a33b49c7cb2a">
+						<cybox:Object>
+							<cybox:Properties xsi:type="WinEventLogObj:WindowsEventLogObjectType">
+								<WinEventLogObj:EID>6008</WinEventLogObj:EID>
+							</cybox:Properties>
+						</cybox:Object>
+					</cybox:Observable>
+				</cybox:Observable_Composition>
+			</indicator:Observable>
+		</stix:Indicator>
+	</stix:Indicators>
+</stix:STIX_Package>

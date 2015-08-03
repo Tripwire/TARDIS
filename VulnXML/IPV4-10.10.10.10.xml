@@ -1,0 +1,43 @@
+<stix:STIX_Package 
+	xmlns:AddressObj="http://cybox.mitre.org/objects#AddressObject-2"
+	xmlns:cybox="http://cybox.mitre.org/cybox-2"
+	xmlns:cyboxCommon="http://cybox.mitre.org/common-2"
+	xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2"
+	xmlns:et="http://stix.mitre.org/ExploitTarget-1"
+	xmlns:example="http://example.com"
+	xmlns:indicator="http://stix.mitre.org/Indicator-2"
+	xmlns:stix="http://stix.mitre.org/stix-1"
+	xmlns:stixCommon="http://stix.mitre.org/common-1"
+	xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="example:Package-4ac92dc7-4be7-473d-81fd-065cfe8043cc" version="1.2">
+    <stix:Indicators>
+        <stix:Indicator id="example:indicator-cf74a8dd-d0a4-41e1-b6fc-da321de3026b" timestamp="2015-07-22T16:36:46.594278+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>IPV4-10.10.10.10</indicator:Title>
+            <indicator:Description>Malicious IPV4 10.10.10.10 reported from malcode.com</indicator:Description>
+            <indicator:Observable id="example:Observable-c4d13e25-ab05-4d7b-859a-20f512e99969">
+                <cybox:Object id="example:Address-046431ac-4403-4e72-bb35-0bfc0b597a31">
+                    <cybox:Properties xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                        <AddressObj:Address_Value condition="Equals">10.10.10.10</AddressObj:Address_Value>
+                    </cybox:Properties>
+                </cybox:Object>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>malcode.com</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2015-07-17T21:00:15+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+    </stix:Indicators>
+    <stix:Exploit_Targets>
+        <stixCommon:Exploit_Target id="example:et-22cc3720-2293-45b2-ac25-b393bb4fea91" timestamp="2015-07-22T16:36:46.594108+00:00" xsi:type='et:ExploitTargetType'>
+            <et:Title>malcode.com observable</et:Title>
+            <et:Vulnerability>
+                <et:Description>maliciousIPV4</et:Description>
+                <et:CVE_ID>IPV4-10.10.10.10</et:CVE_ID>
+            </et:Vulnerability>
+        </stixCommon:Exploit_Target>
+    </stix:Exploit_Targets>
+</stix:STIX_Package>
