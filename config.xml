@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<heavd>
+	<db>
+		<ip>localhost</ip>
+		<user>root</user>
+		<password>password</password>
+		<db_name>TARDIS</db_name>
+	</db>
+	<log_source>elastic_search</log_source>
+	<splunk>
+		<enabled>no</enabled>
+		<ip>localhost</ip>
+		<adminport>8089</adminport>
+		<user>admin</user>
+		<password>password</password>
+	</splunk>
+	<elastic_search>
+		<enabled>yes</enabled>
+		<ip>http://localhost:9200/</ip>
+		<user></user>
+		<password></password>
+	</elastic_search>
+</heavd>
