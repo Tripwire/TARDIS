@@ -23,17 +23,6 @@
 	id="heavd:STIXPackage-0196d980-60d9-4717-b7c5-bf7bc27a35d4" 
 	
 	version="1.1.1">
-	<stix:Exploit_Targets>
-		<stixCommon:Exploit_Target 
-			xsi:type="et:ExploitTargetType" 
-			id="heavd:et-48a276f7-a8d7-bba2-3575-e8a63fcd488" 
-			timestamp="2015-04-24T09:00:00.000000Z">
-			<et:Title>MS15-035 HTTP.sys Vulnerability</et:Title>
-			<et:Vulnerability>
-				<et:CVE_ID>CVE-2015-1635</et:CVE_ID>
-			</et:Vulnerability>
-		</stixCommon:Exploit_Target>
-	</stix:Exploit_Targets>
 	<stix:Indicators>
 		<stix:Indicator xsi:type="indicator:IndicatorType" timestamp="2015-04-24T09:00:00.000000Z" id="heavd:indicator-8d88dd33-1e16-4814-814e-662fb0ac842f">
 			<indicator:Title>MS15-035 Exploit Detection</indicator:Title>
@@ -69,4 +58,15 @@
 			</indicator:Observable>
 		</stix:Indicator>
 	</stix:Indicators>
+	<stix:Exploit_Targets>
+		<stixCommon:Exploit_Target 
+			xsi:type="et:ExploitTargetType" 
+			id="heavd:et-48a276f7-a8d7-bba2-3575-e8a63fcd488" 
+			timestamp="2015-04-24T09:00:00.000000Z">
+			<et:Title>MS15-035 HTTP.sys Vulnerability</et:Title>
+			<et:Vulnerability>
+				<et:CVE_ID>CVE-2015-1635</et:CVE_ID>
+			</et:Vulnerability>
+		</stixCommon:Exploit_Target>
+	</stix:Exploit_Targets>
 </stix:STIX_Package>

@@ -36,7 +36,7 @@
             <et:Title>malcode.com observable</et:Title>
             <et:Vulnerability>
                 <et:Description>maliciousIPV4</et:Description>
-                <et:CVE_ID>IPV4-10.10.10.10</et:CVE_ID>
+                <et:CVE_ID>CVE-2015-0000</et:CVE_ID>
             </et:Vulnerability>
         </stixCommon:Exploit_Target>
     </stix:Exploit_Targets>

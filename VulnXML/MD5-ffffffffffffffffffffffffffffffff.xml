@@ -41,7 +41,7 @@
             <et:Title>malc0de.com observable</et:Title>
             <et:Vulnerability>
                 <et:Description>maliciousMD5</et:Description>
-                <et:CVE_ID>MD5-ffffffffffffffffffffffffffffffff</et:CVE_ID>
+                <et:CVE_ID>CVE-2015-0000</et:CVE_ID>
             </et:Vulnerability>
         </stixCommon:Exploit_Target>
     </stix:Exploit_Targets>
